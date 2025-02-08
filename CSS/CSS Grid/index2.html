@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website</title>
+    <style>
+      .container {
+        height: 100vh;
+        width: 100%;
+        background-color: lightcoral;
+        border: 1px solid black;
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "content content ads"
+          "content content ads"
+          "footer footer footer";
+        grid-gap: 5px;
+        padding: 5px;
+      }
+
+      .header {
+        background-color: lightblue;
+        border-radius: 5px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        grid-area: header;
+      }
+
+      .content {
+        background-color: lightgreen;
+        border-radius: 5px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        grid-area: content;
+      }
+
+      .ads {
+        background-color: lightsalmon;
+        border-radius: 5px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        grid-area: ads;
+      }
+
+      .footer {
+        background-color: lightseagreen;
+        border-radius: 5px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Header</div>
+      <div class="content">Content</div>
+      <div class="ads">Ads</div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>

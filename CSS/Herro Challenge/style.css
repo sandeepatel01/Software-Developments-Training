@@ -1,0 +1,87 @@
+body {
+  background-color: #000000;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 145px;
+  list-style: none;
+}
+
+.nav-list li a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-list li a:hover {
+  color: #f39c12;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url("https://hiteshchoudhary.b-cdn.net/coding-hero-v2/hero.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 51px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 800px;
+  margin-top: 0px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.btn1 {
+  width: 150px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.btn2 {
+  width: 150px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
