@@ -1,4 +1,4 @@
-<h1 align="center">Software Engineering Training</h1>
+<h1 align="center">Software Developments Training</h1>
 
 ## Documentation
 
