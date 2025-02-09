@@ -110,7 +110,9 @@ console.log(longestTea);
 _Use a for loop to reverse the order of teas in the array._
 
 ```jsx
+let reversedArray = [];
 for (let i = teas.length - 1; i >= 0; i--) {
-  console.log(teas[i]);
+  reversedArray.push(teas[i]);
 }
+console.log(reversedArray);
 ```

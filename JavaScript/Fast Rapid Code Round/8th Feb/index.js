@@ -54,6 +54,8 @@ for (let i = 0; i < teas.length; i++) {
 console.log(longestTea);
 
 // Problem: Use a for loop to reverse the order of teas in the array.
+let reversedArray = [];
 for (let i = teas.length - 1; i >= 0; i--) {
-  console.log(teas[i]);
+  reversedArray.push(teas[i]);
 }
+console.log(reversedArray);
