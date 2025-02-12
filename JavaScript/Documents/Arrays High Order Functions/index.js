@@ -86,8 +86,7 @@ const addTwoNumberResult = numbers.reduce(addTwoNumber); // reduce is accepting 
 // splice returns a new array and  modifying the original array
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 
-// splice is removing elements from the original array
-const citrus = fruits.splice(1, 3); // splice is include end index
+const citrus = fruits.splice(1, 3);
 console.log(citrus);
 console.log(fruits);
 

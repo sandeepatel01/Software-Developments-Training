@@ -36,7 +36,9 @@ let resultFunction = addTwoNumber(5, 10, showResult);
 resultFunction();
 ```
 
-### Arrays High Order Functions
+## Arrays High Order Functions
+
+### forEach
 
 ```jsx
 // Arrays High Order Functions - forEach
@@ -49,6 +51,8 @@ function printHeros(hero) {
 // forEach is accepting a callback
 superHeroes.forEach(printHeros); // printHeros is a callback function
 ```
+
+### map
 
 ```jsx
 // Arrays High Order Functions - map
@@ -64,6 +68,8 @@ const doubleNumbers = numbers.map(doubleNumber); // map is accepting a callback
 console.log(doubleNumbers);
 ```
 
+### find
+
 ```jsx
 // Arrays High Order Functions - find
 const numbers = [1, 2, 3, 4, 5];
@@ -75,6 +81,8 @@ function findNumber(num) {
 const findNumberResult = numbers.find(findNumber); // find is accepting a callback
 console.log(findNumberResult);
 ```
+
+### filter
 
 ```jsx
 // Arrays High Order Functions - filter
@@ -89,6 +97,8 @@ const findEvenNumberResult = numbers.filter(findEvenNumber); // filter is accept
 console.log(findEvenNumberResult);
 ```
 
+### reduce
+
 ```jsx
 // Arrays High Order Functions - reduce
 // reduce returns a single value and not changing the original array
@@ -102,9 +112,11 @@ const addTwoNumberResult = numbers.reduce(addTwoNumber); // reduce is accepting 
 console.log(addTwoNumberResult);
 ```
 
+### slice
+
+- slice returns a new array and not changing the original array
+
 ```jsx
-// Arrays High Order Functions - slice
-// slice returns a new array and not changing the original array
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 
 // slice is returning a smaller part of the original array
@@ -112,13 +124,35 @@ const citrus = fruits.slice(1, 3 + 1); // slice is not iclude end index
 console.log(citrus);
 ```
 
+OUTPUT:
+
+```
+["Orange", "Lemon"]
+```
+
+### splice
+
+- The splice() method is used to add, remove, or replace elements in an array.
+- It modifies the original array and returns a new array of removed elements.
+
+Syntax
+
+```
+array.splice(start, deleteCount[Optional], item1, item2, ..., itemN[Optional])
+```
+
 ```jsx
-// Arrays High Order Functions - splice
-// splice returns a new array and  modifying the original array
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 
 // splice is removing elements from the original array
 const citrus = fruits.splice(1, 3); // splice is include end index
 console.log(citrus);
 console.log(fruits);
+```
+
+OUTPUT:
+
+```
+[ 'Orange', 'Lemon', 'Apple' ]
+[ 'Banana', 'Mango' ]
 ```
