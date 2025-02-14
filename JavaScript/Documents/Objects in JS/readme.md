@@ -34,8 +34,11 @@ It is a way to store data in memory in `Key Value` Pair form
 
 ### Creation
 
+1. Using Object Literals
+
 ```jsx
 const person = {
+  // non singleton Object
   id: "1",
   firstname: "Sandeep",
   lastname: "Patel",
@@ -52,7 +55,92 @@ const person = {
 };
 ```
 
-### Access
+2. Using the `Object` Constructor
+
+```jsx
+const person = new Object(); // singleton Object
+person.name = "John";
+person.age = 25;
+```
+
+3. Using `Object.create()`
+
+create a new object with a specified prototype. It allows you to set up prototype inheritance cleanly.
+
+```jsx
+// Syntax
+
+Object.create(proto, propertiesObject[Optional)
+```
+
+- `proto`: The object to be used as the prototype.
+- `propertiesObject` _(optional)_: An object defining additional properties.
+
+```jsx
+// Define an object 'person' with a method 'greet'
+const person = {
+  greet: function () {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+// Create a new object 'john' that inherits[Extends] from 'person'
+const john = Object.create(person);
+
+// Add a 'name' property to 'john'
+john.name = "John";
+
+// Call the 'greet' method, which is inherited from 'person'
+john.greet(); // Output: Hello, my name is John
+```
+
+4. Using a Constructor Function
+
+```jsx
+// Constructor function for a Person
+function Person(name) {
+  this.name = name;
+}
+
+// Adding a method to the prototype
+Person.prototype.greet = function () {
+  console.log(`Hello, my name is ${this.name}`);
+};
+
+// Creating instances
+const john = new Person("John");
+const jane = new Person("Jane");
+
+// Calling methods
+john.greet(); // Output: Hello, my name is John
+jane.greet(); // Output: Hello, my name is Jane
+```
+
+5. Using ES6 Classes
+
+```jsx
+// Define a Person class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  // Method inside the class
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+// Creating instances
+const john = new Person("John");
+const jane = new Person("Jane");
+
+// Calling methods
+john.greet(); // Output: Hello, my name is John
+jane.greet(); // Output: Hello, my name is Jane
+```
+
+### Accessing
 
 ```jsx
 console.log("Person details: ", person);
@@ -64,7 +152,7 @@ console.log("Person full name: ", person.getFullName());
 console.log("Person address: ", person.address);
 ```
 
-```jsx
+```
 OUTPUT:
 Person details:  {
   id: '1',
@@ -81,6 +169,36 @@ Person techStack:  [ 'HTML', 'CSS', 'JS' ]
 Person is student:  true
 Person full name:  Sandeep Patel
 Person address:  { city: 'Pune', state: 'Maharashtra', country: 'India' }
+```
+
+### Adding Properties
+
+You can add properties using **dot notation (`.`)** or **bracket notation (`[]`)**.
+
+```jsx
+const person = { name: "John" };
+
+// Adding a new property
+person.age = 30;
+person["city"] = "New York";
+
+console.log(person); // Output: { name: "John", age: 30, city: "New York" }
+```
+
+### Deleting Properties
+
+You can delete properties using the **`delete`** keyword.
+
+```jsx
+const person = { name: "John" };
+
+// Adding a new property
+person.age = 30;
+person["city"] = "New York";
+
+delete person.age;
+
+console.log(person); // Output: { name: "John", city: "New York" }
 ```
 
 ## Memory
