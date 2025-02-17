@@ -91,7 +91,59 @@ cout << "Value of *arr+3: " << *arr+3 << endl; //
 int arr[4] = {1, 2, 3, 4};
 
 int *ptr = arr;
+// int (*ptr)[5] = &arr;
+// int *ptr = &arr;  // ERROR
 int *ptr2  = arr + 1;
+
+cout<<"arr: "<<arr<<endl;
+cout<<"&arr: "<<&arr<<endl;
+cout<<"arr[0]: "<<arr[0]<<endl;
+cout<<"&arr[0]: "<<&arr[0]<<endl;
+
+cout<<"ptr: "<<ptr<<endl;
+cout<<"&ptr: "<<&ptr<<endl;
+cout<<"*ptr: "<<*ptr<<endl;
+
+cout<<"ptr2: "<<ptr2<<endl;
+cout<<"&ptr2: "<<&ptr2<<endl;
+cout<<"*ptr2: "<<*ptr2<<endl;
+
+cout<<"*ptr+1: "<<*ptr+1<<endl;
+cout<<"*(ptr)+2: "<<*(ptr)+2<<endl;
+
+cout<<"*(ptr2)+2: "<<*(ptr2)+2<<endl;
+cout<<"*(ptr2+4): "<<*(ptr2+4)<<endl;
+
+cout<<"Size of arr: "<<sizeof(arr)<<endl;
+cout<<"Size of ptr: "<<sizeof(ptr)<<endl;
+
+char ch[50] = "Hello";
+
+char* cptr = ch;
+// char* cptr = &ch;
+
+cout<<"ch: "<<ch<<endl;
+cout<<"&ch: "<<&ch<<endl;
+cout<<"ch[0]: "<<ch[0]<<endl;
+cout<<"&ch[0]: "<<&ch[0]<<endl;
+
+cout<<"cptr: "<<cptr<<endl;
+
+cout<<"*cptr: "<<*cptr<<endl;
+cout<<"*(cptr): "<<*(cptr)<<endl;
+cout<<"*(cptr+0): "<<*(cptr+0)<<endl;
+cout<<"cptr[0]: "<<cptr[0]<<endl;
+
+
+char ch = 'A';
+// char *cptr = &ch;
+char *cptr = ch;
+
+cout<<"ch: "<<ch<<endl; // Output: 
+
+
+// *************** Pointer in Function ***************
+int arr[] = {1, 2, 3, 4, 5};
 
 
 
