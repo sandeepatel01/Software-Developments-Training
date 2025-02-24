@@ -72,7 +72,7 @@ console.log(power); // 100000
 // ****** Comparison **********
 
 let x = 10;
-let y = 20;
+let y = 10;
 
 // == (Equal to)  - Checks only data
 // === (Strict equal to) - Checks data and data type
@@ -82,10 +82,48 @@ let y = 20;
 // >= (Greater than or equal to)
 // <= (Less than or equal to)
 
-console.log(x == y); // false
-console.log(x === y); // false
-console.log(x != y); // true
+console.log(x == y); // true
+console.log(x === y); // true
+console.log(x != y); // false
 console.log(x > y); // false
-console.log(x < y); // true
-console.log(x >= y); // false
+console.log(x < y); // false
+console.log(x >= y); // true
 console.log(x <= y); // true
+
+
+// *********** Module *************
+
+// Math
+console.log(Math.max(10, 20, 30)); // 30
+console.log(Math.min(10, 20, 30)); // 10
+
+console.log(Math.random()); // 0 to 1 - return random number
+console.log(Math.random() * 10); // 0 to 10
+
+
+// ********** String Methods *************
+
+let firstName = "Sandeep";
+let lastName = "Patel";
+
+let fullName = firstName + " " + lastName; // Concatination
+console.log(fullName); // Sandeep Singh
+
+let message = "Hello";
+
+console.log(message.length); // 5
+console.log(message.toUpperCase()); // HELLO
+console.log(message.toLowerCase()); // hello
+
+console.log(message.indexOf("l")); // 2
+console.log(message.slice(0, 3)); // Hel
+
+
+// ********** Template Literals *************
+
+let myName = "Sandy";
+let age = 20;
+
+let greeting = `My name is ${myName} and I am ${age} years old.`;
+console.log(greeting); // My name is Sandy and I am 20 years old.
+
