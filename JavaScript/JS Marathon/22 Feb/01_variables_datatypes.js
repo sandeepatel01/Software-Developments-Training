@@ -107,7 +107,7 @@ let firstName = "Sandeep";
 let lastName = "Patel";
 
 let fullName = firstName + " " + lastName; // Concatination
-console.log(fullName); // Sandeep Singh
+console.log(fullName); // Sandeep Patel
 
 let message = "Hello";
 

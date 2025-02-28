@@ -386,7 +386,7 @@ console.log(!false); // true
     - Shifts bits to the left, filling with zeros on the right.
     - `x<<n` multiplies x by 2^n.
     - Example:
-                   `0101<<1 = 1010`
+      `0101<<1 = 1010`
       ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/88acd478-f5d1-4705-869d-b53614c733ea/image.png)
       ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/e3f8f6fc-df26-4a3f-a4b9-86a29ffa4f50/image.png)
 6.  **Right Shift (`>>`)**
@@ -402,3 +402,200 @@ console.log(!false); // true
 ### Triple right shift (`>>>`)
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/7e97db0f-eb87-43f5-8722-0d25b9a5c22b/image.png)
+
+## Module in JS
+
+```jsx
+console.log(Math.max(10, 20, 30)); // 30
+console.log(Math.min(10, 20, 30)); // 10
+
+console.log(Math.random()); // 0 to 1 - return random number
+console.log(Math.random() * 10); // 0 to 10
+```
+
+## Strings
+
+Strings are useful for holding data that can be represented in text form.
+
+String is a sequence of characters enclosed in
+
+- Single quotes (`''`)
+- Double quotes (`""`)
+- Backticks (````)
+
+```jsx
+let str1 = "Hello"; // Single quotes
+let str2 = "World"; // Double quotes
+let str3 = `JavaScript`; // Template literal (ES6) - Backticks
+```
+
+### Strings Creation
+
+1. String Literals
+
+```jsx
+let message = "Hello, JavaScript!";
+
+console.log(message.indexOf("JavaScript")); // 7
+console.log(message.indexOf("Hello")); // 0
+console.log(message.indexOf("!")); // 17
+console.log(typeof message); // string
+```
+
+1. The `String` Constructor
+
+```jsx
+let strObj = new String("Hello"); // Creates a String object
+console.log(typeof strObj); // object
+```
+
+### String Methods
+
+1. Length → Properties
+
+```jsx
+let text = "Hello World";
+console.log(text.length); // 11
+```
+
+1. Accessing Characters in a string
+
+```jsx
+let text = "Hello World";
+
+console.log(text[0]); // 'H'
+console.log(text.charAt(1)); // 'e'
+```
+
+1. Changing Case in a string
+
+```jsx
+let text = "Hello World";
+
+console.log(text.toUpperCase()); // "HELLO WORLD"
+console.log(text.toLowerCase()); // "hello world"
+```
+
+1. Finding Substrings in a string
+
+```jsx
+let text = "Hello World";
+
+console.log(text.indexOf("World")); // 6 (first occurrence)
+console.log(text.lastIndexOf("o")); // 7 (last occurrence)
+console.log(text.includes("Hello")); // true
+console.log(text.startsWith("Hell")); // true
+console.log(text.endsWith("World")); // true
+```
+
+1. Extracting Substrings in a string
+
+```jsx
+let text = "Hello World";
+
+console.log(text.slice(0, 5)); // "Hello" (start, end)
+console.log(text.substring(6, 11)); // "World" (start, end)
+console.log(text.substr(6, 5)); // "World" (start, length)
+```
+
+1. Replacing
+
+```jsx
+let str = "  JavaScript is great!";
+
+console.log(str); // "  JavaScript is great!"
+console.log(str.replace("great", "awesome")); // "JavaScript is awesome!"
+```
+
+1. Trimming
+
+```jsx
+let str = "  JavaScript is great!  ";
+
+console.log(str.trim()); // "JavaScript is great!" (removes spaces)
+console.log(str.trimStart()); // "JavaScript is great!  "
+console.log(str.trimEnd()); // "  JavaScript is great!"
+```
+
+1. Splitting → The `split()` method divides a string into an array based on a **separator**.
+
+```jsx
+// string.split(separator, limit)
+
+let text = "Hello World! JavaScript is awesome.";
+let words = text.split(" ");
+
+console.log(text); // "Hello World! JavaScript is awesome."
+console.log(words); // ["Hello", "World!", "JavaScript", "is", "awesome."]
+
+// Splitting with a Limit
+let text = "red-blue-green-yellow";
+let colors = text.split("-", 2);
+console.log(colors); // Output: [ 'red', 'blue' ]
+
+// Splitting a String by Comma
+let data = "apple,banana,grape,orange";
+let fruits = data.split(",");
+console.log(fruits); // Output: [ 'apple', 'banana', 'grape', 'orange' ]
+
+// Splitting Each Character
+let word = "JavaScript";
+let letters = word.split("");
+console.log(letters); // Output: [ 'J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't' ]
+```
+
+1. Joining [String Concatenation ]
+
+```jsx
+let words = "apple,banana,orange";
+let joinedStr = words
+  .split(",") // Convert string to an array - ["apple", "banana", "orange"]
+  .join(" - ");
+
+console.log(joinedStr); // "apple - banana - orange"
+```
+
+1. Repeating Strings
+
+```jsx
+console.log("Ha".repeat(3)); // "HaHaHa"
+```
+
+1. Concatenation
+
+```jsx
+// Using + (Concatenation Operator)
+let firstName = "Sandeep";
+let lastName = "Patel";
+
+let fullName = firstName + " " + lastName; // Concatination
+console.log(fullName); // Sandeep Patel
+
+// Using concat() Method
+console.log(firstName.concat(" ", lastName)); //Sandeep Patel
+
+// Template Literals
+let myName = "Sandy";
+let age = 20;
+
+let greeting = `My name is ${myName} and I am ${age} years old.`;
+console.log(greeting); // My name is Sandy and I am 20 years old.
+```
+
+### Immutable Nature of Strings
+
+Strings in JavaScript are **immutable**, meaning they **cannot be changed** once created.
+
+```jsx
+let text = "Hello";
+text[0] = "M"; // ❌ Won't change
+console.log(text); // "Hello"
+
+// If you want to modify a string, you need to create a new string.
+
+text = text + " World"; // This creates a new string
+console.log(text); // Output: "Hello World"
+
+text = "M" + text.slice(1);
+console.log(text); // "Mello"
+```
