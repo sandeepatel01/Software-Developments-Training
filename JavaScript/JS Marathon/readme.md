@@ -351,8 +351,6 @@ console.log(!false); // true
     - Compares each bit of two numbers.
     - The result is `1` if at least one of the bits is `1`; otherwise, it's `0`.
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/fd2b5a5a-46bc-4086-a557-e3450557141f/image.png)
-
     ```
     X | 0 = X
     X | 1 = 1
@@ -362,8 +360,6 @@ console.log(!false); // true
 
     - Compares each bit of two numbers.
     - The result is `1` if the bits are different; otherwise, it's `0`.
-
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/958a7561-5af8-4d31-b057-e070fda2ed1c/image.png)
 
     ```
     X ^ 0 = X
@@ -375,20 +371,18 @@ console.log(!false); // true
 
     - Inverts all bits (`1` becomes `0`, and `0` becomes `1`).
 
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/a8707153-8143-4979-891f-4f631f9692d9/image.png)
-
     ```
     ~0 = 1
     ~1 = 0
     ```
 
 5.  **Left Shift (`<<`)**
+
     - Shifts bits to the left, filling with zeros on the right.
     - `x<<n` multiplies x by 2^n.
     - Example:
       `0101<<1 = 1010`
-      ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/88acd478-f5d1-4705-869d-b53614c733ea/image.png)
-      ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/e3f8f6fc-df26-4a3f-a4b9-86a29ffa4f50/image.png)
+
 6.  **Right Shift (`>>`)**
 
         **New bits are always  is independent of msb**
@@ -397,11 +391,7 @@ console.log(!false); // true
 - `x>>n` divides x by 2^n.
 - Example: `0101>>1 = 0010`
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/617bd7bd-1097-4b33-ae44-6653622b1d8d/image.png)
-
 ### Triple right shift (`>>>`)
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/1163cc1b-2e0b-4fcc-b6df-5b06ec3865aa/7e97db0f-eb87-43f5-8722-0d25b9a5c22b/image.png)
 
 ## Module in JS
 
