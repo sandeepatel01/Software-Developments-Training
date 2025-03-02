@@ -589,3 +589,642 @@ console.log(text); // Output: "Hello World"
 text = "M" + text.slice(1);
 console.log(text); // "Mello"
 ```
+## Array
+
+Array are used to store multiple values in a single variable.
+
+They are dynamic  and can hold elements of different data types.
+
+### Creation
+
+```jsx
+let teas = ["Masala Chai", "Green Chai"]; // Using array literals
+let arr2 = new Array(5);   // Creates an empty array with length 5
+let arr3 = Array.of(1, 2, 3); // Creates an array with the given elements
+```
+
+### Accessing Elements
+
+```jsx
+let teas = ["Masala Chai", "Green Chai", "Black Chai", "Ginger Chai"];
+
+console.log(teas[0]); // First element - Masala Chai
+console.log(teas[teas.length - 1]); // Last element - Ginger Chai
+```
+
+## Array Methods
+
+### Adding Elements
+
+```jsx
+let teas = ["Masala Chai", "Green Chai", "Black Chai", "Ginger Chai"];
+
+teas.push("Lemon Chai"); // Add element to the end of the array
+teas.unshift("Grey Chai"); // Add element to the beginning of the array
+console.log(teas);
+
+// Output: ["Grey Chai", "Masala Chai", "Green Chai", "Black Chai", "Ginger Chai", "Lemon Chai"]
+```
+
+### Removing Elements
+
+```jsx
+let teas = ["Masala Chai", "Green Chai", "Black Chai", "Ginger Chai"];
+
+teas.pop(); // Remove the last element from the array
+teas.shift(); // Remove the first element from the array
+console.log(teas); 
+
+// Output: ["Masala Chai", "Green Chai", "Black Chai", "Ginger Chai"]
+```
+
+### Modifying Elements
+
+- Use `splice()` method → add, remove, or replace elements in an array.
+- It modifies the original array and returns a new array of removed elements.
+
+Syntax
+
+```
+array.splice(start, deleteCount[Optional], item1, item2, ..., itemN[Optional])
+```
+
+```jsx
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+
+// Remove 3 elements from index 1 to 3
+const citrus = fruits.splice(1, 3); // splice is include end index
+
+// Insert "Kiwi" at index 1
+const addKiwi = fruits.splice(1, 0, "Kiwi");
+
+console.log(citrus); // [ 'Orange', 'Lemon', 'Apple' ]
+console.log(addKiwi); // []
+console.log(fruits); //  [ 'Banana', 'Kiwi', 'Mango' ]
+```
+
+### Extracting Elements
+
+- Use `slice()` method → Extract a portion of an array without modifying the original array.
+- `slice()` returns a new array and not changing the original array.
+
+Syntax
+
+```
+array.slice(start[Optional], end[Optional])
+```
+
+```jsx
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+
+// slice is returning a smaller part of the original array
+const citrus = fruits.slice(1, 3 + 1); // slice is not iclude end index
+
+console.log(fruits); // [ 'Banana', 'Orange', 'Lemon', 'Apple', 'Mango' ]
+console.log(citrus); // [ 'Orange', 'Lemon', 'Apple' ]
+```
+
+### Searching Elements
+
+Using `indexOf()`
+
+- Returns the index of the first occurrence of the element, or `-1` if not found.
+- Works for **primitive values** (numbers, strings, Booleans).
+
+```jsx
+const arr = [10, 20, 30, 40, 50];
+console.log(arr.indexOf(30));  // Output: 2
+console.log(arr.indexOf(100)); // Output: -1
+```
+
+**Using `find()`**
+
+- Advanced Searching Methods
+- Finding Objects or Custom Conditions
+- Returns the **first matching element** (or `undefined` if not found).
+- Not return Array.
+- It does not modify the original array.
+
+Syntax
+
+```
+array.find(callback(element, index, array), thisArg);
+```
+
+```jsx
+const users = [
+  { id: 1, name: "Amit" },
+  { id: 2, name: "Neha" },
+  { id: 3, name: "Rahul" }
+];
+
+const result = users.find(user => user.id === 2);
+console.log(result); // Output: { id: 2, name: "Neha" }
+```
+
+**Using `findIndex()`**
+
+- Advanced Searching Methods
+- Returns the index of the **first matching element** (or `-1` if not found).
+
+```jsx
+const users = [
+  { id: 1, name: "Amit" },
+  { id: 2, name: "Neha" },
+  { id: 3, name: "Rahul" }
+];
+
+const index = users.findIndex(user => user.id === 2);
+console.log(index); // Output: 1 - index
+```
+
+**Using `filter()`**
+
+- filter returns a new array and not changing the original array with elements that satisfy a given condition.
+
+Syntax
+
+```
+const newArray = array.filter(callback(element, index, array), thisArg);
+```
+
+```jsx
+const numbers = [10, 20, 30, 40, 50, 30];
+
+const results = numbers.filter(num => num === 30);
+console.log(results); // Output: [30, 30]
+```
+
+### Checking Elements
+
+**Using `includes()`**
+
+- It returns `true` if the value is found, otherwise `false`.
+
+Syntax
+
+```
+array.includes(value, startIndex[Optional]);
+string.includes(value, startIndex[Optional]);
+```
+
+```jsx
+const arr = [10, 20, 30, 40, 50];
+console.log(arr.includes(30));  // Output: true
+console.log(arr.includes(100)); // Output: false
+```
+
+**Using `some()` and `every()`**
+
+- `some()` → Returns `true` if **at least one** element matches.
+- `every()` → Returns `true` if **all** elements match.
+
+Syntax
+
+```
+array.some(callback(element, index, array), thisArg);
+```
+
+```
+array.every(callback(element, index, array), thisArg);
+```
+
+```jsx
+const numbers = [10, 20, 30, 40, 50];
+
+console.log(numbers.some(num => num > 25));  // Output: true
+console.log(numbers.every(num => num > 25)); // Output: false
+```
+
+### Iterating Over an Array
+
+**Using `forEach()`**
+
+- A higher-order function that executes a callback function for each element.
+- It is modifies the original array.
+- `forEach()` does not return anything (undefined).
+- ❌ Cons: Cannot use `break` or `continue`
+
+Syntax
+
+```
+array.forEach(callback(element, index(optional), array(optional)), thisArg(optional));
+```
+
+```jsx
+let teas = ["Masala Chai", "Green Chai", "Black Chai", "Ginger Chai"];
+
+teas.forEach((chai, index) => {
+  console.log(`${index}: ${chai}`);
+}) // chai - all values of arr
+
+// Output
+// 0: Masala Chai
+// 1: Green Chai
+// 2: Black Chai
+// 3: Ginger Chai
+```
+
+**Using `map()`**
+
+- `map()` does not modify the original array.
+- `forEach` vs `map` - `map` returns a new array but `forEach` doesn't.
+- ❌ Cons: Cannot break early
+- ✅ Pros: Returns a new array
+
+Syntax
+
+```
+array.map(callback(element, index, array), thisArg);
+```
+
+```jsx
+let numbers = [1, 2, 3, 4, 5];
+
+let newArr = numbers.map(value => value * 2);
+console.log(newArr); // [2, 4, 6, 8, 10]
+```
+
+**Using `reduce()`**
+
+- Reduces an array to a single value.
+- `reduce()` returns a single value and not changing the original array.
+- It is commonly used for summation, product calculation, flattening arrays, and more
+
+Syntax
+
+```
+array.reduce(callback, initialValue[Optional])
+```
+
+```jsx
+let numbers = [1, 2, 3, 4, 5];
+
+let newArr = numbers.map(value => value * 2);
+console.log(newArr); // [2, 4, 6, 8, 10]
+
+let sum = newArr.reduce((total, value) => total + value);
+console.log(sum); // 30
+```
+
+**Using `filter()`**
+
+- Filters elements based on a condition.
+- `filter()` returns a new array and not changing the original array.
+
+Syntax
+
+```
+const newArray = array.filter(callback(element, index(optional), array(optional)), thisAr(optional)g);
+```
+
+```jsx
+let numbers = [10, 20, 30, 40, 50];
+
+let evenNumbers = numbers.filter(value => value % 2 === 0);
+console.log(evenNumbers); // [10, 20, 30, 40]
+```
+
+### Sorting
+
+**Using `.sort()`**
+
+- Default sorting works for strings but not for numbers.
+- modifying the original array.
+- Use a compare function to correctly sort numbers.
+
+Syntax
+
+```jsx
+array.sort(compareFunction(optional));
+// compareFunction (optional) → Defines the sorting order.
+```
+
+1.  Default Sorting (Lexicographic Order)
+
+```jsx
+const fruits = ["banana", "apple", "cherry"];
+console.log(fruits.sort()); // Output: ["apple", "banana", "cherry"]
+
+const numbers = [10, 5, 30, 2];
+console.log(numbers.sort()); // Output: [10, 2, 30, 5] ❌ (incorrect for numbers)
+```
+
+1. Sorting Numbers (Using a Compare Function)
+
+```jsx
+// To correctly sort numbers, use a compare function:
+
+const numbers = [10, 5, 30, 2];
+
+// Ascending order (small to large)
+numbers.sort((a, b) => a - b);
+console.log(numbers); // Output: [2, 5, 10, 30]
+
+// Descending order (large to small)
+numbers.sort((a, b) => b - a);
+console.log(numbers); // Output: [30, 10, 5, 2]
+```
+
+1. Sorting Objects (by Property)
+
+```jsx
+// Useful when sorting an array of objects:
+
+const users = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 22 },
+  { name: "Charlie", age: 30 },
+];
+
+// Sort by age (ascending)
+users.sort((a, b) => a.age - b.age);
+console.log(users);
+
+/* Output:
+[
+  { name: "Bob", age: 22 },
+  { name: "Alice", age: 25 },
+  { name: "Charlie", age: 30 }
+]
+*/
+```
+
+1. Sorting Strings with Different Cases
+
+```jsx
+// Use localeCompare() to handle case-insensitive sorting:
+const names = ["Zebra", "apple", "Orange", "banana"];
+
+names.sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
+console.log(names); // Output: ["apple", "banana", "Orange", "Zebra"]
+```
+
+### Reversing an Array
+
+**Using `.reverse()`**
+
+- Built-in Method
+- `reverse()` **modifies** the original array.
+
+```jsx
+let originalArr = [1, 2, 3, 4, 5];
+let reversedArr = [...originalArr].reverse();
+console.log(reversedArr);
+// Output: [5, 4, 3, 2, 1]
+```
+
+- If you want to **avoid modifying** the original array
+
+```jsx
+let originalArr = [1, 2, 3, 4, 5];
+let reversedArr = [...originalArr].reverse();
+
+console.log(reversedArr); // [5, 4, 3, 2, 1]
+console.log(originalArr); // [1, 2, 3, 4, 5]
+```
+
+### Concatenation of Array
+
+**Using `concat()`**
+
+```jsx
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const result = arr1.concat(arr2);
+console.log(result); // [1, 2, 3, 4, 5, 6]
+```
+
+**Using Spread Operator (`...`)**
+
+```jsx
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const result = [...arr1, ...arr2];
+console.log(result); // [1, 2, 3, 4, 5, 6]
+```
+
+### `join()` Method
+
+- Convert an array into a string.
+
+Syntax
+
+```jsx
+array.join(separator(optional));
+```
+
+1. Default Behavior (`,` as separator)
+
+```jsx
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.join()); // "1,2,3,4,5"
+```
+
+1. Custom Separator
+
+```jsx
+const words = ["JavaScript", "is", "awesome"]; // Recommended
+console.log(words.join(" ")); // "JavaScript is awesome"
+
+const arr = ["Apple", "Banana", "Cherry"];
+console.log(arr.join(" - ")); // "Apple - Banana - Cherry"
+```
+
+1. Without a Separator (Empty String)
+
+```jsx
+const arr = ["H", "E", "L", "L", "O"];
+console.log(arr.join("")); // "HELLO"
+```
+
+1. Joining Numbers
+
+```jsx
+const arr = [10, 20, 30];
+console.log(arr.join(" | ")); // "10 | 20 | 30"
+```
+
+1. Joining Nested Arrays
+
+```jsx
+const arr = [[1, 2], [3, 4], [5, 6]];
+console.log(arr.join("-")); // "1,2-3,4-5,6"
+```
+
+## Objects
+
+**Object is a way to store data in memory in `Key Value` Pair form.**
+
+They can hold properties (variables) and methods (functions).
+
+### Creation
+
+1. **Object Literal**
+
+```jsx
+let ChaiRecipe = {
+  name: "Masala Chai",
+  ingredients: {
+    teaLeaves: "Assam Tea",
+    milk: "Full Cream Milk",
+    sugar: "Brown sugar",
+    spices: ["Daalchini", "Ginger"]
+  },
+  instruction: "Boil water, add tea leaves, milk, sugar and spices"
+};
+
+console.log(ChaiRecipe.ingredients.spices); // [ 'Daalchini', 'Ginger' ]
+console.log(ChaiRecipe.ingredients.spices[0]); // Daalchini
+console.log(ChaiRecipe.instruction); // Boil water, add tea leaves, milk, sugar and spices
+console.log(ChaiRecipe.ingredients.milk); // Full Cream Milk
+```
+
+1. **Using `new Object()`**
+
+```jsx
+const car = new Object();
+car.brand = "Toyota";
+car.model = "Camry";
+console.log(car.brand); // Output: Toyota
+```
+
+1. **Using a Constructor Function**
+
+```jsx
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const user = new Person("Raj", 30);
+console.log(user.name); // Output: Raj
+```
+
+```jsx
+// Constructor function for a Person
+function Person(name) {
+  this.name = name;
+}
+
+// Adding a method to the prototype
+Person.prototype.greet = function () {
+  console.log(`Hello, my name is ${this.name}`);
+};
+
+// Creating instances
+const john = new Person("John");
+const jane = new Person("Jane");
+
+// Calling methods
+john.greet(); // Output: Hello, my name is John
+jane.greet(); // Output: Hello, my name is Jane
+```
+
+1. **Using ES6 Classes**
+
+```jsx
+// Define a Person class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  // Method inside the class
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+// Creating instances
+const john = new Person("John");
+const jane = new Person("Jane");
+
+// Calling methods
+john.greet(); // Output: Hello, my name is John
+jane.greet(); // Output: Hello, my name is Jane
+```
+
+### Accessing
+
+1. Dot Notation
+
+```jsx
+const person = {
+  name: "Amit",
+  age: 25,
+  greet: function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+
+console.log(person.name); // Amit
+console.log(person.age); // 25
+person.greet(); // Hello, my name is Amit
+```
+
+1. Bracket Notation
+
+```jsx
+const person = {
+  name: "Amit",
+  age: 25,
+  greet: function () {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+
+console.log(person["name"]); // Amit
+
+person['age'] = 30;
+console.log(person["age"]); // 30
+```
+
+### **Adding Properties in a Object**
+
+```jsx
+const person = { name: "John" };
+
+// Adding a new property
+person.age = 30;
+person["city"] = "New York";
+
+console.log(person); // Output: { name: "John", age: 30, city: "New York" }
+```
+
+### **Deleting Properties in a Object**
+
+You can delete properties using the **`delete`**  keyword.
+
+```jsx
+const person = { name: "John" };
+
+// Adding a new property
+person.age = 30;
+person["city"] = "New York";
+
+delete person.age;
+
+console.log(person); // Output: { name: "John", city: "New York" }
+```
+
+### Iterating Over Objects
+
+1. Using `for...in` Loop
+
+```jsx
+const population = {
+  male: 4,
+  female: 93,
+  others: 10
+};
+
+// Iterate through the object
+for (const key in population) {
+  console.log(`${key}: ${population[key]}`);
+}
+
+// male: 4
+// female: 93
+// others: 10
+```
+
