@@ -1,7 +1,7 @@
 // ****************** setTimeout - is Part of browser, not JS  *******************************************
 
 const obj = {
-  name: "Sndy",
+  name: "Sandy",
   greet: function () {
     console.log(`Hello ${this.name}`);
   }
@@ -10,6 +10,7 @@ const obj = {
 console.log("Hello from JS");
 
 // setTimeout(() => console.log("I am delayed"), 0);
+
 // setTimeout(obj.greet, 2 * 1000);  // Hello undefined
 
 // bind - context
@@ -33,9 +34,7 @@ console.log("Bye");
 console.log("Hi");
 
 setTimeout(() => console.log("Hello after 0 sec"), 0);
-
 Promise.resolve().then(() => console.log("Promise resolved"));
-
 setTimeout(() => console.log("Hello after 0 sec"), 0);
 
 console.log("Bye");
@@ -61,7 +60,6 @@ Promise.resolve().then(() => {
       })
     })
   })
-});
-
+}); 
 
 console.log("Bye");

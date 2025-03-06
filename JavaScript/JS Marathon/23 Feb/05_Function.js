@@ -39,6 +39,7 @@ let person2 = {
   name: "Sandeep Patel"
 }
 
+// Change context
 person1.greet.call(person2);  // call - hold context
 
 person1.greet.bind(person2); // return new function
