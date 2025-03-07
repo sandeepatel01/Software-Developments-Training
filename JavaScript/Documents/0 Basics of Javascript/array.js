@@ -65,8 +65,14 @@
 // // Output: [100, 15, 25, 5, 8] (Incorrect for numbers)
 
 
-let originalArr = [1, 2, 3, 4, 5];
-let reversedArr = [...originalArr].reverse();
+// let originalArr = [1, 2, 3, 4, 5];
+// let reversedArr = [...originalArr].reverse();
 
-console.log(reversedArr); // [5, 4, 3, 2, 1]
-console.log(originalArr); // [1, 2, 3, 4, 5]
+// console.log(reversedArr); // [5, 4, 3, 2, 1]
+// console.log(originalArr); // [1, 2, 3, 4, 5]
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+console.log(numbers.__proto__);
+console.log(Array.prototype);
